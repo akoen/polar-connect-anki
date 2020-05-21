@@ -904,7 +904,7 @@ class PolarConnect:
         if query is None:
             return []
         else:
-            return self.collection().findNotes(query)
+            return list(map(int, self.collection().findNotes(query)))
 
 
     @api()
@@ -912,7 +912,7 @@ class PolarConnect:
         if query is None:
             return []
         else:
-            return self.collection().findCards(query)
+            return list(map(int, self.collection().findNotes(query)))
 
 
     @api()
@@ -1005,7 +1005,7 @@ class PolarConnect:
             else:
                 browser.onSearchActivated()
 
-        return browser.model.cards
+        return list(map(int, browser.model.cards))
 
 
     @api()
