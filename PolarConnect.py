@@ -912,7 +912,7 @@ class PolarConnect:
         if query is None:
             return []
         else:
-            return list(map(int, self.collection().findNotes(query)))
+            return list(map(int, self.collection().findCards(query)))
 
 
     @api()
